@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project provides a comprehensive analysis of programmatic advertising data and the impact of the 2022 World Cup on advertising metrics. The work is divided into three main tasks: analyzing ad impressions and conversions, generating insights from the World Cup 2022 data, and preparing a presentation to summarize the findings.
+This project is a comprehensive analysis of programmatic advertising data and the impact of the 2022 World Cup on advertising metrics. The work is divided into three main tasks: analyzing ad impressions and conversions, generating insights from the World Cup 2022 data, and preparing a presentation to summarize the findings.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -23,27 +23,27 @@ The goal of this project is to leverage data analysis to provide insights into p
 The project uses three primary datasets with the following schemas:
 
 - **impressions**
-  - `impression_id`: string
-  - `url_address`: string
-  - `user_id`: string
-  - `request_country`: string
-  - `tracking_type`: string (fingerprinted or cookie-based)
-  - `dynamic_display`: boolean
-  - `dynamic_display_variables`: string
-  - `request_browser_name`: string
-  - `timestamp`: date
+  - impression_id: string
+  - url_address: string
+  - user_id: string
+  - request_country: string
+  - tracking_type: string (fingerprinted or cookie-based)
+  - dynamic_display: boolean
+  - dynamic_display_variables: string
+  - request_browser_name: string
+  - timestamp: date
 
 - **clicks**
-  - `impression_id`: int
-  - `user_id`: int
-  - `timestamp`: string
+  - impression_id: int
+  - user_id: int
+  - timestamp: string
 
 - **conversions**
-  - `conversion_id`: string
-  - `user_id`: string
-  - `dval`: integer (deposit value)
-  - `curr`: string (currency)
-  - `timestamp`: date
+  - conversion_id: string
+  - user_id: string
+  - dval: integer (deposit value)
+  - curr: string (currency)
+  - timestamp: date
 
 ## Task 1: Programmatic Advertising Analysis
 
@@ -87,17 +87,14 @@ Prepare a presentation summarizing the findings from Tasks 1 and 2. The presenta
 
 To run the analysis and generate the plots, follow these steps:
 
-1. **Create and Activate Virtual Environment:**
-
+1. **Install Dependencies:**
+   Ensure you have the required libraries installed. You can use the following command to install them:
    ```bash
-   # Create a virtual environment (optional name 'venv')
-   python -m venv venv
+   pip install numpy pandas matplotlib
+Run the Analysis:
+Execute the provided Python scripts to perform the analysis for each task. For example, to plot the top 10 comparisons:
 
-   # Activate the virtual environment
-   # On Windows
-   venv\Scripts\activate
-
-   # On macOS and Linux
-   source venv/bin/activate
-
-   pip install -r requirements.txt
+python
+Copy code
+for df, metric in zip(comparisons_df, metrics):
+    plot_top_10_comparison_absolute_change(df, metric)
